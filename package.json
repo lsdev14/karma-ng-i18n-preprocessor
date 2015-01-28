@@ -1,8 +1,16 @@
 {
-  "name": "karma-ng-i18n-preprocessor",
-  "version": "0.0.1",
-  "author" : "Command Alkon",
-  "dependencies" : {
-    "i18n" : "~0.5.0"
-  }
+    "name": "karma-ng-i18n-preprocessor",
+    "version": "0.0.1",
+    "author": "Command Alkon",
+    "main": "lib/index.js",
+    "scripts": {
+        "test": "mocha test/i18n.test.js"
+    },
+    "dependencies": {
+        "i18n": "~0.5.0"
+    },
+    "devDependencies": {
+        "expect.js": "^0.3.1",
+        "mocha": "^2.1.0"
+    }  
 }
