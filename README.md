@@ -1,24 +1,55 @@
-Add content something like the jade one below.  It should explain how to do it and talk about the configuration.  Any valid i18n config will can be passed in.  The one that is required is the path to the config file.
 
-https://github.com/ojdx/karma-jade-preprocessor
+# karma-ng-i18n-preprocessor
 
+> Preprocessor to use any valid i18n config from JADE file to [AngularJS](http://angularjs.org/) templates.
+
+[![Build Status](https://api.travis-ci.org/lsdev14/karma-ng-i18n-preprocessor.svg?branch=master)](https://travis-ci.org/lsdev14/karma-ng-i18n-preprocessor)
+
+## Installation
+
+Installation is simple using the following:
+```bash
+npm install karma-ng-i18n-preprocessor --save-dev
 ```
-   preprocessors: {
-            //'content/shared/views/caiAbout.jade': 'ng-i18n',
-           // 'content/shared/views/*.jade': 'ng-noScripts',
-            'content/shared/views/**/*.jade': ['ng-i18n','ng-jade2js']
 
-        },
-
-        ngJade2JsPreprocessor: {
-            moduleName: 'cai.templates'
-
-        },
-        ngi18nPreprocessor: {
+## Configuration
+```js
+// karma.conf.js
+module.exports = function(config) {
+  config.set({
+    
+    files: [
+            'content/shared/views/**/*.jade'
+    ],
+    
+    preprocessors: {
+            'content/shared/views/**/*.jade': 'ng-i18n'
+    },
+    
+    ngi18nPreprocessor: {
             i18n : {
                 "directory" : "./test/mocks/content"
             }
-        },
-
-
+    }
+  });
+};
 ```
+
+###You can use other preprocessors together with ng-stripScript
+
+```bash
+npm install karma-ng-jade2js-preprocessor --save-dev
+npm install karma-ng-stripScript-preprocessor --save-dev
+```
+
+```js
+// karma.conf.js
+preprocessors: {
+       'content/shared/views/**/*.jade': ['ng-i18n','ng-jade2js','ng-stripScript']
+}
+```
+
+----
+
+For more information on Karma see the [homepage].
+[homepage]: http://karma-runner.github.com
