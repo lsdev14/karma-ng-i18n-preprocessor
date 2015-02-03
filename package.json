@@ -1,6 +1,6 @@
 {
     "name": "karma-ng-i18n-preprocessor",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A Karma plugin. Use any valid i18n config from JADE file to AngularJS templates",    
     "author" : "Keith McCanless and Leandro de Souza <net.leandro@gmail.com>",
     "license": "MIT",
@@ -8,6 +8,19 @@
     "main": "lib/index.js",
     "scripts": {
         "test": "mocha test/i18n.test.js"
+    },
+    "keywords": [
+        "karma-plugin",
+        "karma-preprocessor",
+        "angularjs",
+        "angular",
+        "html2js",
+        "jade2js",
+        "jade"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lsdev14/karma-ng-i18n-preprocessor"
     },
     "dependencies": {
         "i18n": "~0.5.0"

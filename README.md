@@ -35,11 +35,30 @@ module.exports = function(config) {
 };
 ```
 
-###You can use other preprocessors together with ng-stripScript
+## Example
+##### Locales file
+```js
+// en.json
+{
+    "lblTest": "Hello"
+}
+```
+
+##### Before
+```jade
+span(id="lblTest") #{__("lblTest")}
+```
+
+##### After
+```jade
+span(id="lblTest") Hello
+```
+
+### You can use other preprocessors together with ng-stripScript
 
 ```bash
 npm install karma-ng-jade2js-preprocessor --save-dev
-npm install karma-ng-stripScript-preprocessor --save-dev
+npm install karma-ng-stripscript-preprocessor --save-dev
 ```
 
 ```js
@@ -52,4 +71,5 @@ preprocessors: {
 ----
 
 For more information on Karma see the [homepage].
+
 [homepage]: http://karma-runner.github.com
